@@ -49,9 +49,16 @@ Phase 1 constructs a synthetic Lightning-Network-Data that mirrors real-world st
 - Minimum degree>= 2 (No isolated islands)
 - Visualized network structure
 - JSON export for reproducibility
+- Saves a png image of Generated Network Data
 
 This is the foundation.
 The world before Electricity Flows.
+
+# Network Visualisation
+
+Below is the Image of Synthetic Lightning Network Data-
+
+<p align="center"><img src="Result/Phase1_Lightning_network_Data_Visualisation.png" width="650"/></p>
 
 # Visual Encoding
 
@@ -70,5 +77,6 @@ Next phase of the project will make:-
 
 Running Phase 1 Generates:
 Synthetic_lightning_network_data.json
+Saved Visualistion of the Synthetic Lightning Network Data Graph.
 
 This file stores structured channel data (nodes,fees,capacities) and will be used in Phase 2 for Electrical Modeling.

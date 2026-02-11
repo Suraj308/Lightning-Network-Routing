@@ -86,6 +86,10 @@ sm = plt.cm.ScalarMappable(cmap=plt.cm.viridis)
 sm.set_array(edge_colour)
 plt.colorbar(sm, ax=plt.gca(),label="Fee (Phase 1)")
 
+plt.title("Phase 1: Synthetic Lightning Network Data")
+plt.savefig("Result/Phase1_Lightning_network_Data_Visualisation",dpi=300)
+plt.show()
+
 network_data =[]
 
 for (u,v,data) in G.edges(data=True):
