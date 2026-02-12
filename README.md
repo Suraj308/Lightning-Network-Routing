@@ -80,3 +80,60 @@ Synthetic_lightning_network_data.json
 Saved Visualistion of the Synthetic Lightning Network Data Graph.
 
 This file stores structured channel data (nodes,fees,capacities) and will be used in Phase 2 for Electrical Modeling.
+
+# Phase 2
+It is where the network stops being a graph 
+and starts behaving like physics.
+
+The synthetic Lightning Network Data built in Phase 1 is transformed into a resistive circuital system.
+
+Path search is abandoned.
+Current is allowed to flow.
+
+# From Graph to Physics
+- Load the Synthetic Lightning Network Data from JSON.
+- Interprets every channel fee as electrical resistance.
+- Conversts Resistance into Conductance(G).
+- Builds the Conductance Matrix.
+- Builds the Laplacian Matrix.
+- Encodes Kirchoff's Current Law for every node.
+- Prepares the system for solving the equation LV=I.
+
+At this stage , routing is no longer a search equation.
+It becomes a system of equations.
+
+# Mathematical Interpretation
+
+Every nodes in the Network obeys a Conservative Law.
+Total Outgoing Current = Injected Current
+This balance is written as:
+
+LV=I
+
+L= Lapcian Matrix , V = Voltage of Node , I = Injected Current
+
+Instead of ecploring paths manually, the network is converted into a linear system.
+
+Routing is no longer guessed.
+It is solved.
+
+# Why Lapcian Matrix
+
+The Lapcian Matrix is the heart of the model.
+
+It
+- Has Positive Diagonal Entries representing the Total Connection strength of each node.
+- Has Negative Off-Diagonal Entries representing interaction between neighbouring nodes.
+- Has rows the sum of zero, enforcing conservation of current.
+- Encodes the entire routing topology mathematically.
+
+The single Matrix contains the full Physics of the Lightning Network Routing.
+
+# Output
+
+Running Phase 2 constructs:-
+
+- The Conductance Matrix.
+- The Lapcian Matrix.
+
+These Matrices define the electrical model of Lightning Network Routing.
