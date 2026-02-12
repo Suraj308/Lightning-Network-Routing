@@ -23,29 +23,35 @@ num_nodes=len(nodes)
 for edge in edges:
     edge["Resistance"]=edge["fee"]
 
+def build_conductance_matrix(edge,num_nodes):
+
+
+
 # Initialise Condductance Matrix
-G_matrix=np.zeros((num_nodes,num_nodes))
-for edge in edges:
-    i=edge["from"]
-    j=edge["to"]
-    R = edge["Resistance"]
-    G=1.0/R
+    G_matrix=np.zeros((num_nodes,num_nodes))
+    for edge in edges:
+        i=edge["from"]
+        j=edge["to"]
+        R = edge["Resistance"]
+        G=1.0/R
 
-    G_matrix[i][j]+=G
-    G_matrix[j][i]+=G
+        G_matrix[i][j]+=G
+        G_matrix[j][i]+=G
 
-print("Conductance Matrix-")
-print(G_matrix)
+    print("Conductance Matrix-")
+    print(G_matrix)
 
 # Lets create Lapacian Matrix
 
-L = np.zeros((num_nodes,num_nodes))
-for i in range(num_nodes):
-    for j in range(num_nodes):
-        if i==j:
-            L[i][i]=np.sum(G_matrix[i])
-        else:
-            L[i][j]=-G_matrix[i][j]
+def build_lapicain_matrix(G_matrix):
 
-print("Lapcian Matrix-")
-print(L)
+    L = np.zeros((num_nodes,num_nodes))
+    for i in range(num_nodes):
+        for j in range(num_nodes):
+            if i==j:
+                L[i][i]=np.sum(G_matrix[i])
+            else:
+                L[i][j]=-G_matrix[i][j]
+
+    print("Lapcian Matrix-")
+    print(L)
