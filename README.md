@@ -135,5 +135,6 @@ Running Phase 2 constructs:-
 
 - The Conductance Matrix.
 - The Lapcian Matrix.
+- Current Injection Vector(Sturucture only)
 
 These Matrices define the electrical model of Lightning Network Routing.

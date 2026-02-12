@@ -33,13 +33,20 @@ def build_conductance_matrix(edge,num_nodes):
         i=edge["from"]
         j=edge["to"]
         R = edge["Resistance"]
+
+        if R==0:
+            raise ValueError("Resistance cannot be zero...")
+
         G=1.0/R
+
 
         G_matrix[i][j]+=G
         G_matrix[j][i]+=G
 
-    print("Conductance Matrix-")
-    print(G_matrix)
+    #print("Conductance Matrix-")
+    #print(G_matrix)
+
+    return G_matrix
 
 # Lets create Lapacian Matrix
 
@@ -53,5 +60,20 @@ def build_lapicain_matrix(G_matrix):
             else:
                 L[i][j]=-G_matrix[i][j]
 
-    print("Lapcian Matrix-")
-    print(L)
+    #print("Lapcian Matrix-")
+    #print(L)
+
+    return L
+
+#   Current Injection 
+
+def build_current_vector(num_nodes,source,destination,amount=1.0):
+
+    I=np.zeros(num_nodes)
+
+    I[source]=+amount
+    I[destination]=-amount
+
+    return I
+
+
