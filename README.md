@@ -15,7 +15,7 @@ So why shouldn't routing?
 
 -----
 
-# The Vision
+### The Vision
 The Lightning Network is a graph of nodes and channels.
 In this project we see them as:-
 
@@ -36,7 +36,7 @@ Routing becoomes physics.
 
 -----
 
-# Phase 1 - Building the Electrical World
+## Phase 1 - Building the Electrical World
 
 Before current can flow, the circuit must exist.
 
@@ -54,13 +54,13 @@ Phase 1 constructs a synthetic Lightning-Network-Data that mirrors real-world st
 This is the foundation.
 The world before Electricity Flows.
 
-# Network Visualisation
+### Network Visualisation
 
 Below is the Image of Synthetic Lightning Network Data-
 
 <p align="center"><img src="Result/Phase1_Lightning_network_Data_Visualisation.png" width="650"/></p>
 
-# Visual Encoding
+### Visual Encoding
 
 The Visualisations isn't just aesthetic - it's preparation for Next.
 
@@ -73,7 +73,7 @@ Next phase of the project will make:-
 
 ----
 
-# Output
+### Output
 
 Running Phase 1 Generates:
 Synthetic_lightning_network_data.json
@@ -81,7 +81,7 @@ Saved Visualistion of the Synthetic Lightning Network Data Graph.
 
 This file stores structured channel data (nodes,fees,capacities) and will be used in Phase 2 for Electrical Modeling.
 
-# Phase 2
+## Phase 2
 It is where the network stops being a graph 
 and starts behaving like physics.
 
@@ -90,7 +90,7 @@ The synthetic Lightning Network Data built in Phase 1 is transformed into a resi
 Path search is abandoned.
 Current is allowed to flow.
 
-# From Graph to Physics
+### From Graph to Physics
 - Load the Synthetic Lightning Network Data from JSON.
 - Interprets every channel fee as electrical resistance.
 - Conversts Resistance into Conductance(G).
@@ -102,7 +102,7 @@ Current is allowed to flow.
 At this stage , routing is no longer a search equation.
 It becomes a system of equations.
 
-# Mathematical Interpretation
+### Mathematical Interpretation
 
 Every nodes in the Network obeys a Conservative Law.
 Total Outgoing Current = Injected Current
@@ -117,7 +117,7 @@ Instead of ecploring paths manually, the network is converted into a linear syst
 Routing is no longer guessed.
 It is solved.
 
-# Why Lapcian Matrix
+### Why Lapcian Matrix
 
 The Lapcian Matrix is the heart of the model.
 
@@ -129,7 +129,7 @@ It
 
 The single Matrix contains the full Physics of the Lightning Network Routing.
 
-# Output
+### Output
 
 Running Phase 2 constructs:-
 
@@ -138,3 +138,13 @@ Running Phase 2 constructs:-
 - Current Injection Vector(Sturucture only)
 
 These Matrices define the electrical model of Lightning Network Routing.
+
+## Phase 3
+
+In this phase a unit payment is injected at the source and removed at destination, activating the network.
+The system solves LV=I after grounding one node to remove singularity and establish a voltage reference.
+
+The resulting voltage determines how current flows through each channel using Ohm's Law.
+Multi-path routing emerges naturally, with lower-resistance path caryying more flow.
+
+The solution is verified by ensuring total current leaving the siurce matches the injected amount, Confirming conservation across the Network.
